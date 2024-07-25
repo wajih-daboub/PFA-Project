@@ -4,9 +4,9 @@ metadata:
   name: webapp
   labels:
     app: webapp
-    release: "0"
+    release: "2"
 spec:
   containers:
   - name: webapp
-    image: richardchesterwood/k8s-fleetman-webapp-angular:release0
+    image: richardchesterwood/k8s-fleetman-webapp-angular:release2
 
