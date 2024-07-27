@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: position-tracker
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: position-tracker
+      release: release2
+  template:
+    metadata:
+      labels:
+        app: position-tracker
+        release: release2
+    spec:
+      containers:
+        - name: position-tracker
+          image: richardchesterwood/k8s-fleetman-position-tracker:release2
+

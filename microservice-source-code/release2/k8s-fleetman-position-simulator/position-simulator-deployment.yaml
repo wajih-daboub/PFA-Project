@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: position-simulator
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: position-simulator
+      release: release2
+  template:
+    metadata:
+      labels:
+        app: position-simulator
+        release: release2
+    spec:
+      containers:
+        - name: position-simulator
+          image: richardchesterwood/k8s-fleetman-position-simulator:release2
+          env:
+            - name: fleetman.position.queue
+              value: "fixed-value"

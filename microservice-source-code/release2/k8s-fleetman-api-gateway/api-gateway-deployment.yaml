@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-gateway
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: api-gateway
+      release: release2
+  template:
+    metadata:
+      labels:
+        app: api-gateway
+        release: release2
+    spec:
+      containers:
+        - name: api-gateway
+          image: richardchesterwood/k8s-fleetman-api-gateway:release2
+
